@@ -1,16 +1,15 @@
 import math as m
 import numpy as np
 from asciimatics.screen import Screen
-from matplotlib import pyplot as plt
 
 
 class donut:
     def __init__(self):
-        self.torusCircleResolution = 10
+        self.torusCircleResolution = 20
         self.torusResolution = 30
         self.torusCircleRadius = 0.3
         self.torusRadius = 1.5
-        self.rotationSpeed = [0, 0, 0] # x, y, z
+        self.rotationSpeed = [0.1, 0.1, 0.1] # x, y, z
         self.zOffset = 3
 
         # camera settings
@@ -27,6 +26,7 @@ class donut:
 			[0, 0, self.f / (self.f - self.n), 1],
 			[0, 0, self.f * self.n / (self.f - self.n), 0]
 		]
+        
         self.torus = self.generateDonut()
         self.loop()
 
@@ -37,7 +37,7 @@ class donut:
             for column in range(len(vertex)):
                 sum += matrix[row][column] * vertex[column]
             final_vertex.append(sum)
-            return final_vertex
+        return final_vertex
     
     def rotate(self, vertex, axis, angle):
         if axis =='x':
@@ -54,26 +54,23 @@ class donut:
                       [0, 0, 1]]
         return self.matrixMultiplier(matrix, vertex)
             
-
     def generateDonut(self):
         circleStepSize = 2 * m.pi / self.torusCircleResolution
         circle = []
         for i in range(self.torusCircleResolution):
             vertex = [self.torusRadius+self.torusCircleRadius*m.cos(circleStepSize*i),
-                      self.torusCircleRadius*m.cos(circleStepSize*i),
+                      self.torusCircleRadius*m.sin(circleStepSize*i),
                       0]
             circle.append(vertex)
         torusStepSize = 2 * m.pi / self.torusResolution
         torus = []
         for i in range(self.torusResolution):
             newCircle = [self.rotate(circle[ii], 'y', torusStepSize*i) for ii in range(self.torusCircleResolution)]
-            print(newCircle)
             torus += newCircle
         print('donut generated')
         return torus
     
     def rotateTorus(self):
-        print(self.torus)
         for vertex in self.torus:
             vertex = self.rotate(vertex, 'x', self.rotationSpeed[0])
             vertex = self.rotate(vertex, 'y', self.rotationSpeed[1])
@@ -92,9 +89,9 @@ class donut:
 
     def ascii(self):
         pass
-    
+
     def loop(self):
-        self.rotateTorus()
+        #self.rotateTorus()
         projection = self.project()
         #self.ascii(projection)
 
