@@ -1,0 +1,12 @@
+Sehr geehrter Herr Kohler,
+
+hier ist eine Anleitung zu diesem Projekt.
+Es gibt mehrere Möglichkeiten das Programm zu starten, aber die wohl einfachste wäre
+durch das Python IDLE. Als erstes extrahieren Sie den Hauptordner und führen dann einfach
+die Datei mit dem Namen "forest_with-trees.py" aus. Hierbei ist wichtig,
+dass sich alle drei -.py Dateien im gleichen Ordner befinden.
+Falls Sie Schwierigkeiten oder Fragen haben,
+schicken Sie mir gerne eine Mail.
+
+Mit freundlichen Grüßen
+Philipp

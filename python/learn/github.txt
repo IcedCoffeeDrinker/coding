@@ -1,0 +1,5 @@
+clone   # copy a repository from the internet
+add   # track files and changes in git
+commit  # save files in git
+push  # upload git commits to a remote repository (like GitHub)
+pull  # download changes from remote repository 

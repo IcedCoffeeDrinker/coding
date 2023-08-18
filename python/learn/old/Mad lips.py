@@ -1,0 +1,7 @@
+farbe = input("Nenne eine Farbe: ")
+Substantiv_plural = input("Nenne einen Substantiv im Plural: ")
+ding = input("Nenne ein Ding: ")
+print()
+print("Einhörner sind " + farbe)
+print(Substantiv_plural + " sind lecker")
+print("Ich mag " + ding + "!")

