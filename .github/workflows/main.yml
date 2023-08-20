@@ -1,0 +1,27 @@
+on:
+    push:
+        branches:
+            - master
+
+name: ⏫ Copy content to REBEL
+
+jobs:
+    copy-file:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v3
+
+            # Copy the 'post' folder
+            - name: Push posts
+              uses: dmnemec/copy_file_to_another_repo_action@main
+              env:
+                  API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+              with:
+                  source_file: "python/donut" # Folder to copy
+                  destination_repo: "IcedCoffeeDrinker/da_good_stuff.git" # Target repo
+                  destination_folder: "donut" # Folder where to copy it
+                  user_email: "philipp.haus@icloud.com"
+                  user_name: "IcedCoffeeDrinker"
+                  commit_message: ${{ github.event.head_commit.message }} # Change it to ${{ github.event.head_commit.message }} to preserve the original commit message
+                  git_server: "github.com"
