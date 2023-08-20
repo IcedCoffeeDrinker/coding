@@ -19,7 +19,7 @@ jobs:
                   API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
               with:
                   source_file: "python/donut" # Folder to copy
-                  destination_repo: "IcedCoffeeDrinker/da_good_stuff.git" # Target repo
+                  destination_repo: "IcedCoffeeDrinker/da_good_stuff" # Target repo
                   destination_folder: "donut" # Folder where to copy it
                   user_email: "philipp.haus@icloud.com"
                   user_name: "IcedCoffeeDrinker"
