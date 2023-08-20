@@ -18,7 +18,7 @@ jobs:
               env:
                   API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
               with:
-                  source_file: "python/donut" # Folder to copy
+                  source_file: "python/donut/" # Folder to copy
                   destination_repo: "IcedCoffeeDrinker/da_good_stuff" # Target repo
                   destination_folder: "donut" # Folder where to copy it
                   user_email: "philipp.haus@icloud.com"
@@ -32,7 +32,7 @@ jobs:
               env:
                   API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
               with:
-                  source_file: "python/cube" # Folder to copy
+                  source_file: "python/cube/" # Folder to copy
                   destination_repo: "IcedCoffeeDrinker/da_good_stuff" # Target repo
                   destination_folder: "cube" # Folder where to copy it
                   user_email: "philipp.haus@icloud.com"
@@ -46,7 +46,7 @@ jobs:
               env:
                   API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
               with:
-                  source_file: "python/perlin-noise" # Folder to copy
+                  source_file: "python/perlin-noise/" # Folder to copy
                   destination_repo: "IcedCoffeeDrinker/da_good_stuff" # Target repo
                   destination_folder: "perlin-noise" # Folder where to copy it
                   user_email: "philipp.haus@icloud.com"
@@ -60,7 +60,7 @@ jobs:
               env:
                   API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
               with:
-                  source_file: "python/generativeArt" # Folder to copy
+                  source_file: "python/generativeArt/" # Folder to copy
                   destination_repo: "IcedCoffeeDrinker/da_good_stuff" # Target repo
                   destination_folder: "generativeArt" # Folder where to copy it
                   user_email: "philipp.haus@icloud.com"
